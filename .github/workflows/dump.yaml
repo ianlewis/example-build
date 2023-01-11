@@ -3,8 +3,11 @@ name: Dump GitHub Actions context
 on:
   workflow_dispatch:
     inputs:
-      exampleInput:
-        description: 'Example field'
+      toplevelInput:
+        description: 'Field for top-level workflow'
+        required: false
+      shadowedInput:
+        description: 'Field with same name as top-level workflow'
         required: false
 
 jobs:
@@ -30,4 +33,5 @@ jobs:
   call-workflow:
     uses: MarkLodato/example-reusable-workflow/.github/workflows/dump.yaml@main
     with:
-      resuableInput: blah
+      resuableInput: hard-coded reusableInput value within top-level workflow
+      shadowedInput: hard-coded shadowedInput value within top-level workflow
