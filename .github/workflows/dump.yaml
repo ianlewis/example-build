@@ -1,0 +1,33 @@
+name: Dump GitHub Actions context
+
+on:
+  workflow_dispatch:
+    inputs:
+      exampleInput:
+        description: 'Example field'
+        required: false
+
+jobs:
+  dump-contexts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump contexts as JSON
+        run: |
+          # reusable workflows also have "jobs"
+          echo '{
+            "github": ${{toJSON(github)}},
+            "vars": ${{toJSON(vars)}},
+            "job": ${{toJSON(job)}},
+            "steps": ${{toJSON(steps)}},
+            "runner": ${{toJSON(runner)}},
+            "secrets": ${{toJSON(secrets)}},
+            "strategy": ${{toJSON(strategy)}},
+            "matrix": ${{toJSON(matrix)}},
+            "needs": ${{toJSON(needs)}},
+            "inputs": ${{toJSON(inputs)}}
+          }' | jq --sort-keys .
+
+  call-workflow:
+    uses: MarkLodato/example-reusable-workflow/.github/workflows/dump.yaml@main
+    with:
+      resuableInput: blah
