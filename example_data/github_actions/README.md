@@ -23,7 +23,7 @@ In this example, there are two levels of workflows:
     -   Has two optional input paramters (`inputs`):
         -   `resuableInput` (unique)
         -   `shadowedInput` (same name as top-level workflow's)
-    -   Has two repo-level [variables](https://docs.github.com/en/actions/learn-github-actions/variables):
+    -   Has two repo-level variables ([setting](https://github.com/MarkLodato/example-reusable-workflow/settings/variables/actions), [screenshot](reusable_vars.png), [docs](https://docs.github.com/en/actions/learn-github-actions/variables)):
         -   `REUSABLE_VAR` (unique)
         -   `SHADOWED_VAR` (same name as reusable workflow repo's)
     -   Dumps all contexts as a JSON object.
