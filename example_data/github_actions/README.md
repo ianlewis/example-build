@@ -40,8 +40,8 @@ In this example, there are two levels of workflows:
 
 ## Example output
 
--   [top_level_workflow.json](top_level_workflow.json)
--   [reusable_workflow.json](reusable_workflow.json)
+-   [top_level_context.json](top_level_context.json)
+-   [reusable_context.json](reusable_context.json)
 
 ## Noteworthy properties
 
