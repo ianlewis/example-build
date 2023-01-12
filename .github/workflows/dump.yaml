@@ -16,8 +16,10 @@ jobs:
     steps:
       - name: Dump contexts as JSON
         run: |
-          # reusable workflows also have "jobs"
-          echo '{
+          # Note: reusable workflows also have a "jobs" context, but it is not
+          # available here.
+          cat <<'EOF' | jq --sort-keys .
+          {
             "github": ${{toJSON(github)}},
             "vars": ${{toJSON(vars)}},
             "job": ${{toJSON(job)}},
@@ -28,7 +30,8 @@ jobs:
             "matrix": ${{toJSON(matrix)}},
             "needs": ${{toJSON(needs)}},
             "inputs": ${{toJSON(inputs)}}
-          }' | jq --sort-keys .
+          }
+          EOF
 
   call-workflow:
     uses: MarkLodato/example-reusable-workflow/.github/workflows/dump.yaml@main
