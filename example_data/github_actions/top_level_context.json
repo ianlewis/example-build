@@ -8,11 +8,11 @@
     "api_url": "https://api.github.com",
     "artifact_cache_size_limit": "10",
     "base_ref": "",
-    "env": "/home/runner/work/_temp/_runner_file_commands/set_env_2b57174a-c33e-4c03-8181-6d99738daff6",
+    "env": "/home/runner/work/_temp/_runner_file_commands/set_env_117ddedf-8abc-4821-b2f1-d7f01da66a88",
     "event": {
       "inputs": {
-        "shadowedInput": "Set in UI (shadowed input)",
-        "toplevelInput": "Set in UI (top-level input)"
+        "shadowedInput": "set in UI",
+        "toplevelInput": "set in UI"
       },
       "ref": "refs/heads/main",
       "repository": {
@@ -94,9 +94,9 @@
         },
         "private": false,
         "pulls_url": "https://api.github.com/repos/MarkLodato/example-build/pulls{/number}",
-        "pushed_at": "2023-01-11T16:53:00Z",
+        "pushed_at": "2023-01-12T21:30:53Z",
         "releases_url": "https://api.github.com/repos/MarkLodato/example-build/releases{/id}",
-        "size": 4,
+        "size": 6,
         "ssh_url": "git@github.com:MarkLodato/example-build.git",
         "stargazers_count": 0,
         "stargazers_url": "https://api.github.com/repos/MarkLodato/example-build/stargazers",
@@ -142,8 +142,8 @@
     "graphql_url": "https://api.github.com/graphql",
     "head_ref": "",
     "job": "dump-contexts",
-    "output": "/home/runner/work/_temp/_runner_file_commands/set_output_2b57174a-c33e-4c03-8181-6d99738daff6",
-    "path": "/home/runner/work/_temp/_runner_file_commands/add_path_2b57174a-c33e-4c03-8181-6d99738daff6",
+    "output": "/home/runner/work/_temp/_runner_file_commands/set_output_117ddedf-8abc-4821-b2f1-d7f01da66a88",
+    "path": "/home/runner/work/_temp/_runner_file_commands/add_path_117ddedf-8abc-4821-b2f1-d7f01da66a88",
     "ref": "refs/heads/main",
     "ref_name": "main",
     "ref_protected": false,
@@ -156,23 +156,23 @@
     "repository_visibility": "public",
     "retention_days": "90",
     "run_attempt": "1",
-    "run_id": "3894903057",
-    "run_number": "4",
+    "run_id": "3906210723",
+    "run_number": "6",
     "secret_source": "Actions",
     "server_url": "https://github.com",
-    "sha": "07dfe02fc7f7af481522274f74ba7683e87ba263",
-    "state": "/home/runner/work/_temp/_runner_file_commands/save_state_2b57174a-c33e-4c03-8181-6d99738daff6",
-    "step_summary": "/home/runner/work/_temp/_runner_file_commands/step_summary_2b57174a-c33e-4c03-8181-6d99738daff6",
+    "sha": "325787605787e4a5428bf9bb4a3d8961af65309b",
+    "state": "/home/runner/work/_temp/_runner_file_commands/save_state_117ddedf-8abc-4821-b2f1-d7f01da66a88",
+    "step_summary": "/home/runner/work/_temp/_runner_file_commands/step_summary_117ddedf-8abc-4821-b2f1-d7f01da66a88",
     "token": "***",
     "triggering_actor": "MarkLodato",
     "workflow": "Dump GitHub Actions context",
     "workflow_ref": "MarkLodato/example-build/.github/workflows/dump.yaml@refs/heads/main",
-    "workflow_sha": "07dfe02fc7f7af481522274f74ba7683e87ba263",
+    "workflow_sha": "325787605787e4a5428bf9bb4a3d8961af65309b",
     "workspace": "/home/runner/work/example-build/example-build"
   },
   "inputs": {
-    "shadowedInput": "Set in UI (shadowed input)",
-    "toplevelInput": "Set in UI (top-level input)"
+    "shadowedInput": "set in UI",
+    "toplevelInput": "set in UI"
   },
   "job": {
     "status": "success"
@@ -198,6 +198,7 @@
     "max-parallel": 1
   },
   "vars": {
-    "EXAMPLE_VAR": "example value"
+    "SHADOWED_VAR": "top-level repo's value",
+    "TOPLEVEL_VAR": "top-level repo's value"
   }
 }
