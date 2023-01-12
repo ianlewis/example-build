@@ -6,6 +6,8 @@ The purpose is to understand precisely what the inputs to a GitHub Actions
 workflow are, for the purposes of generating
 [SLSA Provenance](https://slsa.dev/provenance).
 
+## Description
+
 In this example, there are two levels of workflows:
 
 -   The [top-level workflow](../../.github/workflows/dump.yaml) from this repo:
@@ -26,7 +28,7 @@ In this example, there are two levels of workflows:
         -   `SHADOWED_VAR` (same name as reusable workflow repo's)
     -   Dumps all contexts as a JSON object.
 
-To observe the output:
+## Instructions to reproduce
 
 -   Go to https://github.com/MarkLodato/example-build/actions/workflows/dump.yaml
 -   Execute the workflow ([screenshot](run.png)):
@@ -36,8 +38,16 @@ To observe the output:
 -   When it's finished go to the workflow, then copy the output of the two
     `dump-contexts` outputs.
 
-Example output:
+## Example output
 
 -   [top_level_workflow.json](top_level_workflow.json)
 -   [reusable_workflow.json](reusable_workflow.json)
 
+## Noteworthy properties
+
+-   The reusable workflow's `inputs` context is a **combination** of the top-level
+    inputs plus the reusable workflow inputs. In the case where both have the
+    same name (`shadowedInput`), the reusable workflow's value is used.
+-   The resuable workflow's `vars` context is the **same as the top-level's**
+    `vars` context. In other words, the repository variables come from the
+    top-level repo, not the reusable workflow's repo.
