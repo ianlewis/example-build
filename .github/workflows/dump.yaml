@@ -34,7 +34,7 @@ jobs:
           EOF
 
   call-workflow:
-    uses: MarkLodato/example-reusable-workflow/.github/workflows/dump.yaml@main
+    uses: ianlewis/example-reusable-workflow/.github/workflows/dump.yaml@main
     with:
       resuableInput: hard-coded reusableInput value within top-level workflow
       shadowedInput: hard-coded shadowedInput value within top-level workflow
